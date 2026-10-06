@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-nunito bg-white text-duo-charcoal antialiased selection:bg-duo-blue/20;
+    user-select: none;
+  }
+}
+
+@layer components {
+  /* Chunky 4px bottom border with tactile depress effect */
+  .duo-button {
+    @apply uppercase font-extrabold tracking-wider transition-all duration-75 select-none active:translate-y-[4px] active:shadow-none disabled:cursor-not-allowed;
+  }
+
+  .duo-card {
+    @apply bg-white rounded-3xl border-2 border-duo-border shadow-sm;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-float {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}

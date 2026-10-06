@@ -1,0 +1,33 @@
+# Node / Next.js
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Python / Virtual Environments
+venv/
+.venv/
+env/
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.benchmarks/
+.coverage
+htmlcov/
+*.db
+*.sqlite3
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

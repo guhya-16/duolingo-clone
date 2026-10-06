@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Chunky 4px bottom border with tactile depress effect */
+  .duo-button {
+    @apply uppercase font-extrabold tracking-wider transition-all duration-75 select-none active:translate-y-[4px] active:shadow-none;
+  }
+}
