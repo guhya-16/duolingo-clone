@@ -28,14 +28,26 @@ app = FastAPI(
 )
 
 # CORS configuration for Next.js frontend
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=settings.CORS_ORIGINS,
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+# backend/app/main.py
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS,
+    allow_origins=[
+        "http://localhost:3000",
+        "https://duolingo-clone-two-vert.vercel.app",
+    ],
+    allow_origin_regex=r"https://.*\.vercel\.app",  # Permits all Vercel preview/production links
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 @app.exception_handler(StarletteHTTPException)
 async def custom_http_exception_handler(request: Request, exc: StarletteHTTPException):
